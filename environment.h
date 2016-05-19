@@ -87,7 +87,7 @@ extern int TIMELIMITNUM;
 //limit of opt
 #define VIOLENTNUMLIMIT 31
 #define THREE_OPTBOUNDARIES 500 //[0,THREE_OPTBOUNDARIES) slow
-#define FOUR_OPTBOUNDARIES 400
+#define FOUR_OPTBOUNDARIES 500
 #define FIVE_OPTBOUNDARIES 200
 
 //when out of time,func optimizeNodeSwitch return outoftime

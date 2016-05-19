@@ -11,14 +11,23 @@ int main(int argc, char *argv[])
     char *demand[MAX_DEMAND_NUM];
     int demand_num;
 
-    char *topo_file = argv[1];
+#if defined(WIN32)
+	char *topo_file = "G:\\competition\\HUAWEI Code Craft\\semiFinals\\test-case\\caseProblem\\topo.csv";
+#else
+	char *topo_file = argv[1];
+#endif
     edge_num = read_file(topo, MAX_EDGE_NUM, topo_file);
     if (edge_num == 0)
     {
         printf("Please input valid topo file.\n");
         return -1;
     }
-    char *demand_file = argv[2];
+
+#if defined(WIN32)
+	char *demand_file = "G:\\competition\\HUAWEI Code Craft\\semiFinals\\test-case\\caseProblem\\demand.csv";
+#else
+	char *demand_file = argv[2];
+#endif
     demand_num = read_file(demand, MAX_DEMAND_NUM, demand_file);
     if (demand_num != MAX_DEMAND_NUM)
     {
@@ -28,7 +37,11 @@ int main(int argc, char *argv[])
 
     search_route(topo, edge_num, demand, demand_num);
 
-    char *result_file = argv[3];
+#if defined(WIN32)
+	char *result_file = "G:\\competition\\HUAWEI Code Craft\\semiFinals\\test-case\\caseProblem\\sample_result.csv";
+#else
+	char *result_file = argv[3];
+#endif
     write_result(result_file);
     release_buff(topo, edge_num);
     release_buff(demand, demand_num);

@@ -92,7 +92,7 @@ GraphVector::GraphVector(char *topo[], int edge_num) :GraphBase()
 
 	nodeNum = nodeIdSet.size();
 
-	TIMELIMITNUM = assistMin(((nodeNum / 100 + 1) * 1000), 9000);
+	TIMELIMITNUM = assistMin(((nodeNum / 100 + 3) * 1000), 9000);
 }
 
 GraphVector::GraphVector(char *topo[], int edge_num, bool reverse)
